@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        #container1content {
+            position: absolute;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.593);
+        }
+
+        .header {
+            padding: 20px 150px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header h1 {
+            color: red;
+        }
+
+        .header button {
+            background-color: red;
+            color: white;
+            border: 0;
+            border-radius: 3px;
+            height: 30px;
+            width: 80px;
+        }
+
+        .header select,
+        .footend select {
+            background-color: rgba(45, 44, 44, 0.547);
+            color: white;
+            border-radius: 3px;
+            height: 30px;
+            width: 100px;
+        }
+
+        .container1content {
+            margin: 10%;
+            text-align: center;
+        }
+
+        .container1content h1 {
+            font-size: 50px;
+            padding: 20px;
+        }
+
+        .container1content p {
+            font-size: 23px;
+        }
+
+        .container1foot {
+            margin: 20px;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .container1 input {
+            background-color: rgb(23, 23, 23);
+            border: 1px solid grey;
+            padding: 5px;
+            height: 40px;
+            width: 350px;
+            color: white;
+            border-radius: 3px;
+            font-size: 20px;
+            margin: 15px 0;
+        }
+
+        .container1foot button {
+            background-color: rgb(255, 0, 0);
+            border: 0;
+            padding: 5px;
+            height: 50px;
+            width: 200px;
+            color: white;
+            border-radius: 3px;
+            font-size: 20px;
+        }
+
+        .container2 {
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5% 10%;
+        }
+
+        .container2content h1 {
+            margin-bottom: 20px;
+        }
+
+        .container2content p {
+            font-size: 25px;
+        }
+
+        .container2content {
+            width: 45%;
+        }
+
+        .container3 {
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5% 10%;
+        }
+
+        .container3content h1 {
+            margin-bottom: 20px;
+            font-size: 50px;
+        }
+
+        .container3content p {
+            font-size: 25px;
+        }
+
+        .container3content {
+            width: 45%;
+        }
+
+        .dwld {
+            position: relative;
+        }
+
+        #box {
+            border: 1px solid grey;
+            background-color: black;
+            border-radius: 8px;
+            display: flex;
+            /* margin: 0 0 200px; */
+            width: 250px;
+            padding: 10px;
+            font-size: 13px;
+            align-items: center;
+
+            position: absolute;
+            bottom: 40px;
+            left: 140px;
+        }
+
+        #box h3,
+        #box p {
+
+            margin-left: 10px;
+        }
+
+        .container4 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 5% 10%;
+        }
+
+        .container4 h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+
+        }
+
+        .container4 p {
+            font-size: 25px;
+        }
+
+        .child {
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 7%;
+        }
+
+        .childcontent h1 {
+            margin-bottom: 20px;
+        }
+
+        .childcontent {
+            width: 45%;
+        }
+
+        .faq {
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            margin: 40px 20px;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .faq-div{
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .Questions {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(49, 48, 48);
+            padding: 25px;
+            margin: 5px 0;
+        }
+        .drop{
+            background-color: rgb(49, 48, 48);
+            padding:20px;
+            display: none;
+        }
+        .faq-div.active .drop{
+            display: block;
+        }
+        .faqsub {
+            padding: 15px 150px;
+            justify-content: center;
+        }
+
+        .Questions:hover {
+            background-color: rgb(68, 66, 66);
+        }
+
+        .faqfoot {
+            margin: 20px;
+            text-align: center;
+
+        }
+
+        .faq input {
+            background-color: rgb(23, 23, 23);
+            border: 1px solid grey;
+            padding: 5px;
+            height: 40px;
+            width: 400px;
+            color: white;
+            border-radius: 3px;
+            font-size: 20px;
+            margin: 15px 0;
+        }
+
+        .faq button {
+            background-color: rgb(255, 0, 0);
+            border: 0;
+            padding: 5px;
+            height: 50px;
+            width: 200px;
+            color: white;
+            border-radius: 3px;
+            font-size: 20px;
+        }
+
+        .footer {
+            margin: 5% 12%;
+            font-size: 16px;
+            color: rgb(156, 155, 155);
+        }
+
+        .footer a {
+            color: rgb(156, 155, 155);
+        }
+
+        .footcontent {
+            display: flex;
+
+        }
+
+        .footbody,
+        .footend div {
+            margin: 10px 0;
+        }
+
+        .footbody div {
+            margin: 11px 140px 11px 0;
+
+        }
+    </style>
+     
+</head>
+
+<body>
+    <div class="full">
+        <div class="container1">
+            <div class="bgimg">
+                <img src="../Images/Netflix-bg.jpg" height="702px" width="100%" alt="">
+            </div>
+            <div id="container1content">
+                <div class="header">
+                    <div>
+                        <h1><big>NETFLIX</big>
+                        </h1>
+                    </div>
+                    <div><select name="English" id="">
+                            <option value="">English</option>
+                        </select>
+                        <button>Sign In</button>
+                    </div>
+                </div>
+                <div class="container1content">
+                    <h1><big>The biggest Indian hits. The best Indian stories. All streaming here.</big></h1>
+                    <p>Watch anywhere. Cancel anytime.</p>
+                    <div class="container1foot">
+                        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                        <input type="email" placeholder="Email address">
+                        <button>Get Started ></button>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+
+            <div class="container2">
+                <div class="container2content">
+                    <h1>Enjoy on your TV</h1>
+                    <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+                </div>
+                <div>
+                    <img src="../Images/Netflix-tv.png" width="600px" alt="">
+                </div>
+            </div>
+            <hr>
+
+            <div class="container3">
+                <div class="dwld">
+                    <div><img src="../Images/Netflix-dwld.jpg" width="550px" alt=""></div>
+                    <div id="box">
+                        <img src="../Images/boxshot.png" height="70px" width="50px" alt="">
+                        <div>
+                            <h3>Stranger Things</h3>
+                            <p style="color: blue;">Downloading...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container3content">
+                    <h1>Download your shows to watch offline</h1>
+                    <p>Save your favourites easily and always have something to watch.</p>
+                </div>
+            </div>
+            <hr>
+
+            <div class="container4">
+                <div class="container4content">
+                    <h1>Watch everywhere</h1>
+                    <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+                </div>
+                <div>
+                    <img src="../Images/Netflix-device.png" width="600px" alt="">
+                </div>
+            </div>
+            <hr>
+
+        </div>
+        <div class="child">
+            <div>
+                <img src="../Images/Netflix-children.png" width="600px" alt="">
+            </div>
+            <div class="childcontent">
+                <h1>Create profiles for kids</h1>
+                <p>Send children on adventures with their favourite characters in a space made just for them—free with
+                    your
+                    membership.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faqsub">
+                <div class="faq-div">
+                    <div class="Questions">
+                        <p>What is Netflix?</p>
+                        <div class="+">
+                            <p>+</p>
+                        </div>
+                    </div>
+                    <div class="drop">
+                        <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies,
+                            anime, documentaries and more – on thousands of internet-connected devices.
+                            <br> <br>
+                            You can watch as much as you want, whenever you want, without a single ad – all for one low
+                            monthly price. There's always something new to discover, and new TV shows and movies are added
+                            every week!
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-div">
+                    <div class="Questions">
+                        <p>How much does Netflix cost?</p>
+                        <p>+</p>
+                    </div>
+                    <div class="drop">
+                        <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one
+                            fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.</p>
+                    </div>
+                </div>
+                <div class="faq-div">
+                    <div class="Questions">
+                        <p>Where can I watch?</p>
+                        <p>+</p>
+                    </div>
+                    <div class="drop">
+                        <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at
+                            netflix.com from your personal computer or on any internet-connected device that offers the
+                            Netflix app, including smart TVs, smartphones, tablets, streaming media players and game
+                            consoles.
+                            <br> <br>
+                            You can also download your favourite shows with the iOS, Android, or Windows 10 app. Use
+                            downloads to watch while you're on the go and without an internet connection. Take Netflix with
+                            you anywhere.</p>
+                    </div>
+                </div>
+                <div class="faq-div">
+                    <div class="Questions">
+                        <p>How do I cancel?</p>
+                        <p>+</p>
+                    </div>
+                    <div class="drop">
+                        <p>Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel
+                            your account online in two clicks. There are no cancellation fees – start or stop your account
+                            anytime.</p>
+                    </div>
+                </div>
+                <div class="faq-div">
+                    <div class="Questions">
+                        <p>What can I watch on Netflix?</p>
+                        <p>+</p>
+                    </div>
+                    <div class="drop">
+                        <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning
+                            Netflix originals, and more. Watch as much as you want, anytime you want.</p>
+                    </div>
+                </div>
+                <div class="faq-div">
+                    <div class="Questions">
+                        <p>Is Netflix good for kids?</p>
+                        <p>+</p>
+                    </div>
+                    <div class="drop">
+                        <p>The Netflix Kids experience is included in your membership to give parents control while kids
+                            enjoy family-friendly TV shows and films in their own space.
+                            <br> <br>
+                            Kids profiles come with PIN-protected parental controls that let you restrict the maturity
+                            rating of content kids can watch and block specific titles you don’t want kids to see.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faqfoot">
+                <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                <input type="email" placeholder="Email address">
+                <button>Get Started ></button>
+            </div>
+        </div>
+        <hr>
+
+        <div class="footer">
+            <div class="Question">Questions? Call<a href=""> 000-800-919-1694</a></div>
+            <div class="footcontent">
+                <div class="footbody">
+                    <div><a href="">FAQ</a></div>
+                    <div><a href="">Investor Relations</a></div>
+                    <div><a href="">Privacy</a></div>
+                    <div><a href="">Speed Test</a></div>
+                </div>
+                <div class="footbody">
+                    <div><a href="">Help Centre</a></div>
+                    <div><a href="">Jobs</a></div>
+                    <div><a href="">Cookie Preferences</a></div>
+                    <div><a href="">Legal Notices</a></div>
+                </div>
+                <div class="footbody">
+                    <div><a href="">Account</a></div>
+                    <div><a href="">Ways to Watch</a></div>
+                    <div><a href="">Corporate Information</a></div>
+                    <div><a href="">Only on Netflix</a></div>
+                </div>
+                <div class="footbody">
+                    <div><a href="">Media Centre</a></div>
+                    <div><a href="">Terms of Use</a></div>
+                    <div><a href="">Contact Us</a></div>
+
+                </div>
+            </div>
+            <div class="footend">
+                <div><select name="English" id="">
+                        <option value="">English</option>
+                    </select></div>
+                <div>
+                    <p>Netflix India</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+   <script src="./Netflix.js"></script>
+</body>
+
+</html>
